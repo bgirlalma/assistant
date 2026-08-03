@@ -3,7 +3,7 @@
     "name": "Asssistant",
     "slug": "Asssistant",
     "extra": {
-      "ASSISTANT_OPENAI_API_KEY": "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"
+      "ASSISTANT_OPENAI_API_KEY": ""
     },
     "version": "1.0.0",
     "orientation": "portrait",

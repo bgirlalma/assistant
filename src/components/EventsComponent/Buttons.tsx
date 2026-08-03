@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 
-export type FilterType = "current" | "completed";
+type FilterType = "current" | "completed";
 
 interface ButtonsProps {
   activeFilter: FilterType;
@@ -27,17 +27,17 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 10,
     borderRadius: 12,
-    backgroundColor: "rgba(10, 250, 78, 0.3)",
+    backgroundColor: "rgba(218, 244, 52, 0.3)",
     alignItems: "center",
   },
   completed: {
     flex: 1,
     paddingVertical: 10,
     borderRadius: 12,
-    backgroundColor: "rgba(59, 29, 233, 0.3)",
+    backgroundColor: "rgba(218, 244, 52, 0.3)",
     alignItems: "center",
   },
-  activeButton: { backgroundColor: "#FFFFFF" },
+  activeButton: { backgroundColor: "#ae1414" },
   text: {
     color: "#fff",
     fontWeight: 600,

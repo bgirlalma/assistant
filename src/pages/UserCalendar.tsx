@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 60,
-    backgroundColor: "#57C785",
+    backgroundColor: "#2A7B9B",
   },
   calendarWrapper: {
     borderRadius: 15, // Скругляем углы календаря
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   titleBlockEvent: {
     fontFamily: "TitleBold",
     fontSize: 16,
-    color: "#1170eb",
+    color: "#f2f4f6",
   },
   event: {
     marginBottom: 10,
@@ -153,10 +153,10 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "rgba(255, 255, 255, 1)",
   },
-    removeButton: {
-      flexDirection: 'row',
-      justifyContent: 'space-between'
-},
+  removeButton: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   dataEvent: {
     fontFamily: "TitleRegular",
     fontSize: 16,

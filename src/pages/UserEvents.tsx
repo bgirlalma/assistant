@@ -15,15 +15,16 @@ import DeleteButton from "../components/userCalendarComponent/DeleteButton";
 type Event = {
   id: string;
   text: string;
-  time: string;
-  eventsDate: string;
+  time: any;
+  eventsDate: any;
 };
+ type FilterType = "current" | "completed";
 
 const UserEvents = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const { user, isLoading: authLoading } = useAuth();
-  const [filter, setFilter] = useState("completed");
+  const [filter, setFilter] = useState<FilterType>("current");
 
   useEffect(() => {
     // Если хук еще загружает пользователя из AsyncStorage или пользователя нет — ничего не делаем
@@ -45,16 +46,24 @@ const UserEvents = () => {
   }, [user?.uid, authLoading]);
 
   //find current data
-  const today = new Date().toISOString().split("T")[0];
+  const today = new Date();
+  today.setHours(0,0,0,0)
 
   // filter list of events
   const filteredEvents = events.filter((event) => {
     if (!event.eventsDate) return false;
-    if (filter === "current") {
-      return event.eventsDate >= today; //current and future
-    } else {
-      return event.eventsDate < today; //past
+    const eventData = event.eventsDate?.toDate()
+    eventData.setHours(0, 0, 0, 0)
+    
+    if (filter === 'current') {
+      return eventData >= today
     }
+
+    if (filter === 'completed') {
+      return eventData < today
+    }
+
+    return true
   });
 
   if (loading || authLoading) {
@@ -114,7 +123,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 60,
-    backgroundColor: "#57C785",
+    backgroundColor: "#2A7B9B",
   },
   event: {
     marginBottom: 10,

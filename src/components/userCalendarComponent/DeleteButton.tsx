@@ -7,7 +7,7 @@ type DeleteButtonProps = {
   eventId: string
 }
 
-const DeleteButton = () => {
+const DeleteButton = ({eventId} : {eventId: string}) => {
     const { user } = useAuth();
   
   const handleRemove = () => {
