@@ -18,7 +18,7 @@ type Event = {
   time: any;
   eventsDate: any;
 };
- type FilterType = "current" | "completed";
+type FilterType = "current" | "completed";
 
 const UserEvents = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -47,23 +47,23 @@ const UserEvents = () => {
 
   //find current data
   const today = new Date();
-  today.setHours(0,0,0,0)
+  today.setHours(0, 0, 0, 0);
 
   // filter list of events
   const filteredEvents = events.filter((event) => {
     if (!event.eventsDate) return false;
-    const eventData = event.eventsDate?.toDate()
-    eventData.setHours(0, 0, 0, 0)
-    
-    if (filter === 'current') {
-      return eventData >= today
+    const eventData = event.eventsDate?.toDate();
+    eventData.setHours(0, 0, 0, 0);
+
+    if (filter === "current") {
+      return eventData >= today;
     }
 
-    if (filter === 'completed') {
-      return eventData < today
+    if (filter === "completed") {
+      return eventData < today;
     }
 
-    return true
+    return true;
   });
 
   if (loading || authLoading) {
@@ -114,7 +114,7 @@ const UserEvents = () => {
         )}
       ></FlatList>
     </View>
-  );
+  )
 };
 
 const styles = StyleSheet.create({
